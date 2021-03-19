@@ -1,0 +1,104 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "angular.experimental-ivy": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        },
+        "editor.renderIndentGuides": true,
+        "editor.rulers": [
+            100
+        ],
+        "eslint.options": {
+            "extensions": [
+                ".ts",
+                ".html"
+            ]
+        },
+        "eslint.validate": [
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "html"
+        ],
+        "files.trimTrailingWhitespace": true,
+        "search.showLineNumbers": true,
+        "typescript.implementationsCodeLens.enabled": true,
+        "typescript.referencesCodeLens.enabled": true,
+        "typescript.preferences.quoteStyle": "single",
+        "typescript.suggest.completeFunctionCalls": true,
+        "npm.enableScriptExplorer": true,
+        "workbench.tree.indent": 20,
+        "workbench.tree.renderIndentGuides": "always",
+        "files.exclude": {
+            "**/node_modules": false
+        },
+        "psi-header.changes-tracking": {
+            "autoHeader": "autoSave",
+            "include": [
+                "typescript",
+                "javascript"
+            ],
+            "excludeGlob": [
+                "**/settings.json"
+            ],
+            "enforceHeader": true
+        },
+        "psi-header.config": {
+            "forceToTop": true,
+            "blankLinesAfter": 1,
+            "license": "Custom"
+        },
+        "psi-header.lang-config": [
+            {
+                "language": "*",
+                "begin": "",
+                "end": "",
+                "prefix": "//"
+            }
+        ],
+        "psi-header.templates": [
+            {
+                "language": "*",
+                "template": [
+                    " Copyright Fedex <<year>>"
+                ]
+            }
+        ],
+        "typescript.tsdk": "node_modules\\typescript\\lib"
+    },
+    "extensions": {
+        "recommendations": [
+            // Support to run npm scripts and validates currently installed modules against those
+            // defined in the package.json
+            "eg2.vscode-npm-script",
+            // Enforces consistent styling (Mandatory)
+            "esbenp.prettier-vscode",
+            // Integrates ESLint into VS Code (Mandatory)
+            "dbaeumer.vscode-eslint",
+            // To debug inside VSCode
+            "msjsdiag.debugger-for-chrome",
+            // Live preview of markdown files
+            "yzhang.markdown-all-in-one",
+            // Markdown mermaid extensions
+            "bierner.markdown-mermaid",
+            // Visualize UML Diagrams
+            "jebbs.plantuml",
+            // Auto add headers for new files
+            "psioniq.psi-header",
+            // Auto format css,scss,sass files
+            "michelemelluso.code-beautifier",
+            // IntelliSense for Angular templates
+            "angular.ng-template",
+            // Checks spelling of code and documentation
+            "streetsidesoftware.code-spell-checker"
+        ]
+    }
+}

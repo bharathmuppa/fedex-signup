@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.fedex-bg-img {
+    background: url(./assets/fedex.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: brightness(0.5);
+}
+
+/* Removing input background color for Chrome autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px #25ddf5;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 1px;
+    background-color: #25ddf5;
+    outline: 1px solid red;
+}
