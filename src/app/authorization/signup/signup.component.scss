@@ -9,3 +9,12 @@
     margin-top: 1rem;
     font-size: large;
 }
+
+::ng-deep.mat-progress-spinner circle,
+::ng-deep.mat-spinner circle {
+    stroke: white !important;
+}
+
+.isClicked {
+    cursor: not-allowed;
+}

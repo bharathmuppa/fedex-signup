@@ -1,8 +1,8 @@
 // Copyright Fedex 2021
 
 import { Injectable } from '@angular/core';
-import { IAnonymousObject } from '../models/i-anonymous-collection';
-import * as CONFIG_MESSAGES from './authorization.constants';
+import { IAnonymousObject } from '../../models/i-anonymous-collection';
+import * as CONFIG_MESSAGES from './client.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import * as CONFIG_MESSAGES from './authorization.constants';
 /**
  * Service to fetch and serve client defined messages
  */
-export class AuthConfigService {
+export class ClientConfiguredMessagesService {
 
   public getConfigurationMessage(): IAnonymousObject {
     return Object.seal(CONFIG_MESSAGES);

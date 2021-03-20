@@ -8,13 +8,16 @@ import { SignupComponent } from './signup/signup.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthService } from './auth.service';
 import { ClientConfiguredMessagesService } from './client-configured-messages/client-configured-messages.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SuccessComponent } from './success/success.component';
 
 
 @NgModule({
-  declarations: [SignupComponent],
+  declarations: [SignupComponent, SuccessComponent],
   imports: [
-    CommonModule,
     AuthorizationRoutingModule,
+    CommonModule,
+    HttpClientModule,
     SharedModule
   ],
   providers: [

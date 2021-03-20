@@ -98,12 +98,18 @@
         <button
           type="submit"
           mat-raised-button
+          [class.isClicked]="showLoader"
           color="primary"
+          type="submit"
           id="submit"
           fxFlex="3rem"
-          [disabled]="!signupForm.valid"
+          [disabled]="signupForm.invalid"
         >
-          Register
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="0.5rem">
+            <span *ngIf="!showLoader">Register</span>
+            <span *ngIf="showLoader">Registring</span>
+            <mat-spinner *ngIf="showLoader" [diameter]="20"></mat-spinner>
+          </div>
         </button>
       </form>
     </mat-card-content>
