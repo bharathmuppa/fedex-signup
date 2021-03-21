@@ -1,0 +1,22 @@
+<div
+  class="signup-form-container"
+  fxLayout="row"
+  fxLayout.xs="row"
+  fxLayoutAlign="end center"
+  fxLayoutAlign.md="center center"
+  fxLayoutAlign.sm="start center"
+  fxLayoutAlign.xs="start center"
+>
+  <mat-card
+    fxFlex="25rem"
+    fxFlex.sm="70%"
+    fxFlex.xs="100%"
+    class="mat-elevation-z8"
+    color="primary"
+  >
+    <mat-card-content fxLayout="column" fxLayoutAlign="start" class="signup-form">
+      <h2 fxFlexAlign="center" class="mat-headline">Open an account</h2>
+      <app-signup-form (registerUser)="sendUserForRegistration($event)"></app-signup-form>
+    </mat-card-content>
+  </mat-card>
+</div>

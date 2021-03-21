@@ -13,6 +13,6 @@ import * as CONFIG_MESSAGES from './client.constants';
 export class ClientConfiguredMessagesService {
 
   public getConfigurationMessage(): IAnonymousObject {
-    return Object.seal(CONFIG_MESSAGES);
+    return Object.freeze(CONFIG_MESSAGES);
   }
 }

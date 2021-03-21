@@ -82,10 +82,10 @@ export class SignupComponent {
 
   private initializeSignupForm(): FormGroup {
     return this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]*$/)]],
+      lastName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]*$/)]],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.pattern('^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$')])],
+      password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/)])],
       confirmedPassword: ['', Validators.required]
     }, {
       validator: [

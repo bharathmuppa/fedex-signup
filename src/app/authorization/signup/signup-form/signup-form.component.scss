@@ -1,0 +1,20 @@
+#submit {
+    margin-top: 1rem;
+    font-size: large;
+}
+
+::ng-deep.mat-progress-spinner circle,
+::ng-deep.mat-spinner circle {
+    stroke: white !important;
+}
+
+.isClicked {
+    cursor: not-allowed;
+}
+
+// Enable this to solve issue in material error message styling
+// https://github.com/angular/components/issues/4580
+// ::ng-deep .mat-form-field-subscript-wrapper,
+// ::ng-deep .mat-form-field-underline {
+//     position: static !important;
+// }

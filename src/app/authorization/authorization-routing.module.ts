@@ -2,11 +2,12 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './signup/signup.component';
+
+import { SignupContainerComponent } from './signup/signup-container/signup-container.component';
 import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
-  { path: 'signup', component: SignupComponent },
+  { path: 'signup', component: SignupContainerComponent },
   {
     path: 'success',
     component: SuccessComponent
@@ -21,5 +22,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+/**
+ * Authorization module specific routes
+ */
 export class AuthorizationRoutingModule { }
 

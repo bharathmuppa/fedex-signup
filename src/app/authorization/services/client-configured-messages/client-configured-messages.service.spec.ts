@@ -28,7 +28,7 @@ describe('Client Configured Messages Service', () => {
   });
   it('first name should match "First name is required." ', () => {
     // Arrange
-    clientConfiguredMessagesServiceSpy.getConfigurationMessage.and.returnValue(Object.seal(CONFIG_MESSAGES));
+    clientConfiguredMessagesServiceSpy.getConfigurationMessage.and.returnValue(Object.freeze(CONFIG_MESSAGES));
 
     // Act
     const clientConfiguredMessageObject = service.getConfigurationMessage();
@@ -37,9 +37,10 @@ describe('Client Configured Messages Service', () => {
     expect(clientConfiguredMessageObject.firstNameRequired).toContain('First name is required.');
   });
 
+
   it('first name message should not change to  "First name is not required." ', () => {
     // Arrange
-    clientConfiguredMessagesServiceSpy.getConfigurationMessage.and.returnValue(Object.seal(CONFIG_MESSAGES));
+    clientConfiguredMessagesServiceSpy.getConfigurationMessage.and.returnValue(Object.freeze(CONFIG_MESSAGES));
 
     // Act
     const clientConfiguredMessageObject = service.getConfigurationMessage();
