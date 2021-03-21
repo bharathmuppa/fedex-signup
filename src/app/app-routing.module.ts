@@ -9,7 +9,9 @@ const routes: Routes = [
     path: '',
     redirectTo: 'authorization',
     pathMatch: 'full'
-  }
+  },
+  //TODO: Map to page not found component
+  { path: '**', redirectTo: '/authorization' },
 ];
 
 @NgModule({

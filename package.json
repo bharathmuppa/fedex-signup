@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:Docs": "compodoc -p ./tsconfig.compodoc.json "
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "@angular-eslint/template-parser": "2.0.2",
     "@angular/cli": "~11.2.4",
     "@angular/compiler-cli": "~11.2.5",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "4.16.1",
