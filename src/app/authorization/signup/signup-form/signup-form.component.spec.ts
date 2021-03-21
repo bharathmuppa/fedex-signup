@@ -172,12 +172,12 @@ describe('SignupFormComponent', () => {
     expect(component.signupForm.controls.password.valid).toBeTruthy();
   });
 
-  it('Password should not be valid if value is "Withoutnumbers"', () => {
+  it('Password should be valid if value is "Withoutnumbers"', () => {
     // Arrange
     component.signupForm.controls.password.setValue('Withoutnumbers');
 
     // Assert
-    expect(component.signupForm.controls.password.valid).toBeFalsy();
+    expect(component.signupForm.controls.password.valid).toBeTruthy();
   });
   it('Password should not be valid if value is "8989877"', () => {
     // Arrange

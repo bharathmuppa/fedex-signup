@@ -57,7 +57,7 @@
       </div>
     </mat-error>
     <mat-error *ngIf="signupForm.hasError('crossControls')">
-      Password can't contain your First Name or Last Name
+      {{ signupErrorMessages.PASSWORD_CONTAINS_USER_NAME_ERROR }}
     </mat-error>
     <button mat-icon-button type="button" matSuffix (click)="hidePassword = !hidePassword">
       <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
@@ -73,7 +73,7 @@
       required
     />
     <mat-error *ngIf="signupForm.errors?.mismatch">
-      The retyped password does not match your password.
+      {{ signupErrorMessages.CONFIRMED_PASSWORD_MATCHES_PASSWORD }}
     </mat-error>
     <button
       mat-icon-button

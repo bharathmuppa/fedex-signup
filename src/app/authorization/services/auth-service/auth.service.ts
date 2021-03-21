@@ -25,7 +25,7 @@ export class AuthService {
    */
   public registerUser(user: IUser): Observable<boolean> {
 
-    return this.http.post<boolean>(`${environment.apiUrl}`, user, { observe: 'response' }).pipe(
+    return this.http.post<boolean>(`${environment.fedexApi}`, user, { observe: 'response' }).pipe(
       timeout(1000),
       map((response: HttpResponse<boolean>) => response.status === 200)
     );

@@ -6,7 +6,8 @@ import { ValidationErrors, ValidatorFn, AbstractControl } from '@angular/forms';
  *
  * @param regex pattern
  * @param error key to identify form error
- * @returns
+ * @returns validator function that has verification logic to either return error or null on pattern
+ * matching
  */
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {

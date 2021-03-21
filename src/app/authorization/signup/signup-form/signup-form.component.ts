@@ -14,7 +14,7 @@ import { crossControlsValidator } from '../../validators/cross-controls-validato
 import { matchControlsValidator } from '../../validators/match-control-validator';
 
 @Component({
-  selector: 'app-signup-form',
+  selector: 'fx-signup-form',
   templateUrl: './signup-form.component.html',
   styleUrls: ['./signup-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -75,7 +75,7 @@ export class SignupFormComponent {
       firstName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]*$/)]],
       lastName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]*$/)]],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/)])],
+      password: ['', Validators.compose([Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d\w\W]{8,}$/)])],
       confirmedPassword: ['', Validators.required]
     }, {
       validator: [

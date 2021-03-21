@@ -2,14 +2,14 @@
 
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 
-
 /**
  * Check whether source control includes values of target controls
  *
  * @param source control acts as base control
  * @param targetFields controls to validate with source control
- * @returns validator function that has verification logic to either return error or null if its
- * valid
+ * @returns validator function that has verification logic to either return one of the below
+ * 1. error object with ```crossControls``` key, if source field not equals target field.
+ * 2. null (match or pristine)
  */
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function crossControlsValidator(source: string, ...targetFields: string[]): ValidatorFn {

@@ -14,6 +14,8 @@ export const PASSWORD_REQUIRED = 'Password is required';
 export const PASSWORD_INVALID_PATTERN = 'Password must contain at least 8 characters, 1 upper case letter, 1 lower case letter.';
 export const PASSWORD_CONTAINS_USER_NAME_ERROR = `Password can't contain your First Name or Last Name`;
 
+export const CONFIRMED_PASSWORD_MATCHES_PASSWORD = `The retyped password does not match your password.`;
+
 export const USER_REGISTRATION_SUCCESSFUL = 'Registration successful';
 export const USER_REGISTRATION_FAIL = 'Registration failed';
 export const USER_REGISTRATION_ALERT_CLOSE = 'Close';

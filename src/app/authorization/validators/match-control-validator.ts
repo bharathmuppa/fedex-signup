@@ -2,6 +2,15 @@
 
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 
+/**
+ * Check whether source value matches with target value
+ *
+ * @param source control acts as base control
+ * @param targetFields controls to validate with source control
+ * @returns validator function that has verification logic to either return one of the below
+ * 1. error object with ```mismatch``` key, if source field not equals target field.
+ * 2. null (match or pristine)
+ */
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function matchControlsValidator(source: string, target: string): ValidatorFn {
     return (control: AbstractControl): { [key: string]: boolean } | null => {

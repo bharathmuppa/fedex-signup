@@ -1,4 +1,6 @@
+// Copyright Fedex 2021
+
 export const environment = {
   production: true,
-  apiUrl: 'https://demo-api.now.sh/users'
+  fedexApi: 'https://demo-api.now.sh/users'
 };

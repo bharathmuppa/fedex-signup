@@ -12,7 +12,7 @@ import { ClientConfiguredMessagesService } from '../../services/client-configure
 import { SignupFormComponent } from '../signup-form/signup-form.component';
 
 @Component({
-  selector: 'app-signup-container',
+  selector: 'fx-signup-container',
   templateUrl: './signup-container.component.html',
   styleUrls: ['./signup-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
