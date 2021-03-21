@@ -30,6 +30,15 @@ export function matchControlsValidator(source: string, target: string): Validato
             return null;
         }
 
-        return (sourceField === targetField) ? null : { mismatch: true };
+        if (sourceField === targetField) {
+            return null;
+        } else {
+            const error = {
+                mismatch: true
+            };
+            // add error to source control (Required for Material forms fields)
+            control.get(source)?.setErrors(error);
+            return error;
+        }
     };
 }

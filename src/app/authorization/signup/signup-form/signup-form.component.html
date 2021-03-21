@@ -63,6 +63,7 @@
       <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
     </button>
   </mat-form-field>
+
   <mat-form-field fxFlex>
     <mat-label>Confirm password</mat-label>
     <input
@@ -72,7 +73,10 @@
       formControlName="confirmedPassword"
       required
     />
-    <mat-error *ngIf="signupForm.errors?.mismatch">
+    <mat-error *ngIf="f.confirmedPassword.hasError('required')">
+      {{ signupErrorMessages.PASSWORD_REQUIRED }}
+    </mat-error>
+    <mat-error *ngIf="f.confirmedPassword.hasError('mismatch')">
       {{ signupErrorMessages.CONFIRMED_PASSWORD_MATCHES_PASSWORD }}
     </mat-error>
     <button
@@ -84,6 +88,7 @@
       <mat-icon>{{ hideConfirmedPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
     </button>
   </mat-form-field>
+
   <button
     type="submit"
     mat-raised-button
@@ -92,7 +97,6 @@
     type="submit"
     id="submit"
     fxFlex="3rem"
-    [disabled]="signupForm.invalid"
   >
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="0.5rem">
       <span *ngIf="!showLoader">Register</span>
