@@ -1,8 +1,10 @@
 // Copyright Fedex 2021
 
-import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 import { IUser } from 'src/app/shared/models/i-user.model';
 import { IAnonymousObject } from '../../models/i-anonymous-collection';
@@ -19,12 +21,13 @@ import { SignupFormComponent } from '../signup-form/signup-form.component';
 /**
  * Acts as container fo signup form
  */
-export class SignupContainerComponent {
+export class SignupContainerComponent implements OnDestroy {
 
   @ViewChild(SignupFormComponent, { static: true })
   private signupFormComponent?: SignupFormComponent;
   private signupErrorMessages: IAnonymousObject;
 
+  private registerUserSubscription$?: Subscription;
   /**
    * Creates instance of ```SignupComponent``` component
    *
@@ -44,14 +47,19 @@ export class SignupContainerComponent {
 
   }
 
+  ngOnDestroy(): void {
+    if (this.registerUserSubscription$) {
+      this.registerUserSubscription$.unsubscribe();
+    }
+  }
+
 
   public sendUserForRegistration(user: IUser): void {
-    if (this.signupFormComponent) {
-      this.signupFormComponent.showLoader = true;
-      this.signupFormComponent.signupForm.disable();
-    }
+    this.disableChildSignupForm();
 
-    this.authService.registerUser(user).subscribe((isUserRegisteredSuccessfully: boolean) => {
+    this.registerUserSubscription$ = this.authService.registerUser(user).pipe(finalize(() => {
+      this.enableChildSignupForm();
+    })).subscribe((isUserRegisteredSuccessfully: boolean) => {
 
       if (!isUserRegisteredSuccessfully) {
         return;
@@ -61,12 +69,6 @@ export class SignupContainerComponent {
 
     }, () => {
       this.showErrorMessageInSnackBar();
-    }, () => {
-
-      if (this.signupFormComponent) {
-        this.signupFormComponent.showLoader = false;
-        this.signupFormComponent.signupForm.enable();
-      }
     });
   }
 
@@ -79,5 +81,19 @@ export class SignupContainerComponent {
       duration: 3000,
     });
   }
+
+  private enableChildSignupForm() {
+    if (this.signupFormComponent) {
+      this.signupFormComponent.showLoader = false;
+      this.signupFormComponent.signupForm.enable();
+    }
+  }
+  private disableChildSignupForm() {
+    if (this.signupFormComponent) {
+      this.signupFormComponent.showLoader = true;
+      this.signupFormComponent.signupForm.disable();
+    }
+  }
+
 
 }
