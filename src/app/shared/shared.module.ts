@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Material specific modules
+import { HeaderComponent } from './components/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -20,10 +21,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FlexLayoutModule,
+    MatToolbarModule,
   ],
   exports: [
     FlexLayoutModule,
+    HeaderComponent,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -33,7 +37,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatSnackBarModule,
     MatToolbarModule,
     ReactiveFormsModule
-  ]
+  ],
+  declarations: [HeaderComponent]
 })
 /**
  * Bundles all modules required across application

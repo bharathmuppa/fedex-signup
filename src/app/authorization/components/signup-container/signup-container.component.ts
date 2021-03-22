@@ -3,7 +3,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs/operators';
 
 import { IUser } from 'src/app/shared/models/i-user.model';
 import { IAnonymousObject } from '../../models/i-anonymous-collection';
@@ -63,7 +62,7 @@ export class SignupContainerComponent {
     }, () => {
       this.showErrorMessageInSnackBar();
     }, () => {
-      // TODO: Use view child apply this
+
       if (this.signupFormComponent) {
         this.signupFormComponent.showLoader = false;
         this.signupFormComponent.signupForm.enable();
