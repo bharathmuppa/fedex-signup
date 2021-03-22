@@ -23,7 +23,7 @@
     <mat-error *ngIf="f.lastName.hasError('required')">
       {{ signupErrorMessages.LAST_NAME_REQUIRED }}
     </mat-error>
-    <mat-error *ngIf="f.firstName.hasError('pattern')">
+    <mat-error *ngIf="f.lastName.hasError('pattern')">
       {{ signupErrorMessages.LAST_NAME_ON_INVALID_PATTERN }}
     </mat-error>
   </mat-form-field>
