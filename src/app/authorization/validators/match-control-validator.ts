@@ -36,7 +36,7 @@ export function matchControlsValidator(source: string, target: string): Validato
             const error = {
                 mismatch: true
             };
-            // add error to source control (Required for Material forms fields)
+            // add error to source control (Required for Material forms fields) instead of ErrorStateMatcher.
             control.get(source)?.setErrors(error);
             return error;
         }

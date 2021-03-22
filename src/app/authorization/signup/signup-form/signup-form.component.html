@@ -46,6 +46,7 @@
       id="password"
       [type]="hidePassword ? 'password' : 'text'"
       formControlName="password"
+      [errorStateMatcher]="crossControlsMatcher"
       required
     />
     <mat-error *ngIf="f.password.hasError('required')">

@@ -10,6 +10,7 @@ import { IAbstractKeys } from '../../models/i-abstract-keys';
 import { IAnonymousObject } from '../../models/i-anonymous-collection';
 import { ISignupUser } from '../../models/i-signup-user';
 import { ClientConfiguredMessagesService } from '../../services/client-configured-messages/client-configured-messages.service';
+import { CrossControlsMatcher } from '../../validators/cross-controls-matcher';
 import { crossControlsValidator } from '../../validators/cross-controls-validator';
 import { matchControlsValidator } from '../../validators/match-control-validator';
 
@@ -28,6 +29,8 @@ export class SignupFormComponent {
   public signupForm: FormGroup;
   public signupErrorMessages: IAnonymousObject;
   public showLoader: boolean;
+
+  public crossControlsMatcher = new CrossControlsMatcher();
 
   /**
    * Creates instance of ```SignupComponent``` component
