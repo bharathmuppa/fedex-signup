@@ -116,3 +116,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 3. More error conditions would be possible if server responds with proper validations.
 4. Form control name is used instead of form control to avoid strict type issues.
 5. Return to register page from success page.
+6. Minimize use of function calls in angular templates.
